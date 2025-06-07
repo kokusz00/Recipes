@@ -1,19 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pancake Recipe</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="recipeNav.js"></script>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="recipe-nav.js"></script>
 </head>
 <body>
   <div class="container">
-    <h2>Pancake</h2>
-    <div id="pageContent"></div>
-    <button id="prevBtn" style="display:none;">Back</button>
-    <button id="nextBtn">Next</button>
-    <button id="finishBtn" style="display:none;" onclick="location.href='index.html'">Finish</button>
+    <h1>Pancake</h1>
+    <p class="description">For 10–12 pieces. Soft, fluffy, and perfect every time. Step through this recipe for the perfect pancakes!</p>
+
+    <div id="recipe-pages">
+      <!-- Page 1 (Intro & Ingredients) -->
+      <div class="page active">
+        <img src="https://www.seriouseats.com/thmb/nA6IlmbZ5zMSF8OeaKy_mABkszM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20230118-Basically-Shortcut-Pancakes-Amanda-Suarez-hero-bd71b80cfd544259af659f2b5c7c5c2a.JPG" alt="Pancake Image" class="recipe-img">
+        <ul>
+          <li>15 dkg flour</li>
+          <li>1 egg</li>
+          <li>3 dl milk</li>
+          <li>1 dl soda</li>
+          <li>1 tablespoon granulated sugar</li>
+          <li>1 pinch salt</li>
+          <li>Oil for frying</li>
+        </ul>
+        <button class="next">Next</button>
+      </div>
+
+      <!-- Pages 2–9 -->
+      ${Array.from({ length: 8 }, (_, i) => `
+        <div class="page">
+          <img src="https://source.unsplash.com/400x300/?cooking,step${i+1}" class="recipe-img" />
+          <p>Step ${i+2}. Description of what to do here for step ${i+2}.</p>
+          <button class="back">Back</button>
+          <button class="next">Next</button>
+        </div>
+      `).join('')}
+
+      <!-- Last Page -->
+      <div class="page">
+        <img src="https://source.unsplash.com/400x300/?pancake,ready" class="recipe-img" />
+        <p>Step 10. Enjoy your pancakes! Serve warm with syrup or your favorite toppings.</p>
+        <button class="back">Back</button>
+        <button class="finish">Finish</button>
+      </div>
+    </div>
   </div>
 </body>
 </html>
