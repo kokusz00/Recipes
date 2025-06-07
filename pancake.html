@@ -1,84 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pancake Recipe</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="recipeNav.js"></script>
 </head>
 <body>
   <div class="container">
-    <div class="recipe-page" data-page="0">
-      <h2>Title: Pancake</h2>
-      <p><strong>Ingredients:</strong></p>
-      <ul>
-        <li>15 dkg flour</li>
-        <li>1 egg</li>
-        <li>3 dl milk</li>
-        <li>1 dl soda</li>
-        <li>1 tablespoon granulated sugar</li>
-        <li>1 pinch salt</li>
-        <li>Oil for frying</li>
-      </ul>
-      <img src="https://images.unsplash.com/photo-1587731346685-d490d9cfa663" alt="Pancake">
-      <button class="next">Next</button>
-    </div>
-
-    <!-- Steps -->
-    <div class="recipe-page hidden" data-page="1">
-      <p>1. Beat the eggs in a bowl, add the sugar, salt, and whisk with a whisk.</p>
-      <img src="https://images.unsplash.com/photo-1518131678256-76f9a88c0ee1" alt="Step 1">
-      <button class="back">Back</button>
-      <button class="next">Next</button>
-    </div>
-    <div class="recipe-page hidden" data-page="2">
-      <p>2. Add the flour and 2 dl of milk to the eggs, and whisk until smooth.</p>
-      <img src="https://images.unsplash.com/photo-1590080876216-d0d6d89e1c00" alt="Step 2">
-      <button class="back">Back</button>
-      <button class="next">Next</button>
-    </div>
-    <div class="recipe-page hidden" data-page="3">
-      <p>3. When it is almost lump-free, gradually dilute it with the remaining milk and soda.</p>
-      <img src="https://images.unsplash.com/photo-1572441710534-df1863d5d8c5" alt="Step 3">
-      <button class="back">Back</button>
-      <button class="next">Next</button>
-    </div>
-    <div class="recipe-page hidden" data-page="4">
-      <p>4. Let the pancake batter rest for at least half an hour.</p>
-      <img src="https://images.unsplash.com/photo-1590080876043-dc5e637209a7" alt="Step 4">
-      <button class="back">Back</button>
-      <button class="next">Next</button>
-    </div>
-    <div class="recipe-page hidden" data-page="5">
-      <p>5. After resting, stir the batter, it should have the consistency of cream.</p>
-      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" alt="Step 5">
-      <button class="back">Back</button>
-      <button class="next">Next</button>
-    </div>
-    <div class="recipe-page hidden" data-page="6">
-      <p>6. Heat a little oil in a pan, spread it over the surface of the pan with a spatula.</p>
-      <img src="https://images.unsplash.com/photo-1572448862528-98a1f67bcd2b" alt="Step 6">
-      <button class="back">Back</button>
-      <button class="next">Next</button>
-    </div>
-    <div class="recipe-page hidden" data-page="7">
-      <p>7. Pour a ladleful into the pan and swirl to cover.</p>
-      <img src="https://images.unsplash.com/photo-1616627455919-8b0cd9f36568" alt="Step 7">
-      <button class="back">Back</button>
-      <button class="next">Next</button>
-    </div>
-    <div class="recipe-page hidden" data-page="8">
-      <p>8. Flip the pancake when edges lift.</p>
-      <img src="https://images.unsplash.com/photo-1632936623474-5d87871941c6" alt="Step 8">
-      <button class="back">Back</button>
-      <button class="next">Next</button>
-    </div>
-    <div class="recipe-page hidden" data-page="9">
-      <p>9. Cook the other side. Stack on a plate.</p>
-      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Step 9">
-      <button class="back">Back</button>
-      <button class="end">End</button>
-    </div>
+    <h2>Pancake</h2>
+    <div id="pageContent"></div>
+    <button id="prevBtn" style="display:none;">Back</button>
+    <button id="nextBtn">Next</button>
+    <button id="finishBtn" style="display:none;" onclick="location.href='index.html'">Finish</button>
   </div>
 </body>
 </html>
