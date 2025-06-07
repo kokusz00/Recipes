@@ -1,34 +1,12 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const pages = document.querySelectorAll(".recipe-page");
-  if (pages.length === 0) return;
+document.addEventListener('DOMContentLoaded', () => {
+  const searchBar = document.getElementById('searchBar');
+  const recipeCards = document.querySelectorAll('.recipe-card');
 
-  let currentPage = 0;
-  const updatePages = () => {
-    pages.forEach((page, index) => {
-      page.classList.toggle("active", index === currentPage);
-      page.classList.toggle("hidden", index !== currentPage);
-    });
-  };
-
-  updatePages();
-
-  document.querySelectorAll(".next").forEach(btn => {
-    btn.addEventListener("click", () => {
-      if (currentPage < pages.length - 1) currentPage++;
-      updatePages();
-    });
-  });
-
-  document.querySelectorAll(".back").forEach(btn => {
-    btn.addEventListener("click", () => {
-      if (currentPage > 0) currentPage--;
-      updatePages();
-    });
-  });
-
-  document.querySelectorAll(".end").forEach(btn => {
-    btn.addEventListener("click", () => {
-      window.location.href = "../index.html";
+  searchBar.addEventListener('input', () => {
+    const searchTerm = searchBar.value.toLowerCase();
+    recipeCards.forEach(card => {
+      const title = card.querySelector('h2')?.textContent.toLowerCase() || '';
+      card.style.display = title.includes(searchTerm) ? 'flex' : 'none';
     });
   });
 });
